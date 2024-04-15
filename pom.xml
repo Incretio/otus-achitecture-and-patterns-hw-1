@@ -7,13 +7,17 @@
   <groupId>com.incretio.study.otus.architectureandpatterns</groupId>
   <artifactId>hw-1</artifactId>
   <version>1.0.0</version>
+  <packaging>jar</packaging>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
   </properties>
 
   <dependencyManagement>
     <dependencies>
+
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
@@ -21,6 +25,7 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+
     </dependencies>
   </dependencyManagement>
 
@@ -31,5 +36,24 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>3.1.1</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
